@@ -15,10 +15,10 @@ public class XbkTest extends CamelSpringTestSupport {
 
 	@Test
 	public void testXbk() throws Exception {
-		MockEndpoint mock1 = getMockEndpoint("mock:hi");
-		mock1.expectedBodiesReceived("random message");
+		MockEndpoint mock = getMockEndpoint("mock:hi");
+		mock.expectedBodiesReceived("random message");
 		template.requestBody("jms:hi", "random message");
-		mock1.assertIsSatisfied();
+		mock.assertIsSatisfied();
 	}
 
 }
